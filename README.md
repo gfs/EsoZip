@@ -56,5 +56,63 @@ public static byte[]? Decompress(byte[] digest, int fileLength)
 }
 ```
 
+## HashZip2
+Compression Ratio: The maximum archive size is bounded by the number of unique byte values in the original content.
+Performance: Compression performance is fast. Decompression is much faster than HashZip2.
+Data Integrity: The SHA-512 and count of occurences of bytes of the decompressed data will always match the SHA-512 and count of occurences of bytes of the original data.
+
+### Compression
+A hash is taken of the content to be compressed and the number of occurences of each byte is counted.
+```csharp
+public static HashZip2Archive Compress(byte[] content)
+    {
+        var hasher = SHA512.Create();
+        var hash = hasher.ComputeHash(content);
+        var dict = new Dictionary<byte, int>();
+        foreach (var byt in content)
+        {
+            if (!dict.ContainsKey(byt))
+            {
+                dict.Add(byt, 0);
+            }
+            dict[byt]++;
+        }
+
+        return new HashZip2Archive(hash, dict);
+    }
+```
+
+### Decompression
+The hash is reversed by generating the set of possible permutations of the bytes.
+
+```csharp
+public static byte[]? Decompress(HashZip2Archive archive)
+{
+    var hasher = SHA512.Create();
+    byte[]? result = null;
+    var byteList = new List<byte>();
+    foreach (var byt in archive.ByteCounts)
+    {
+        var toWrite = Enumerable.Repeat(byt.Key, byt.Value).ToArray();
+        byteList.AddRange(toWrite);
+    }
+
+    var candidate = byteList.ToArray();
+    
+    foreach (var permutation in byteList.Permutations())
+    {
+        permutation.CopyTo(candidate,0);
+        var hash = hasher.ComputeHash(candidate);
+        if (hash.SequenceEqual(archive.Digest))
+        {
+            return candidate;
+        }
+    }
+
+    return result;
+}
+```
+
+
 # License
 MIT.
