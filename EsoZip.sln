@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsoZip", "EsoZip\EsoZip.csproj", "{B77476A1-76D2-4CD8-8D5C-E79F6798817A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsoZip.Lib", "EsoZip.Lib\EsoZip.Lib.csproj", "{71670D77-3582-4EB3-B8B8-9912DF29F8B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B77476A1-76D2-4CD8-8D5C-E79F6798817A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B77476A1-76D2-4CD8-8D5C-E79F6798817A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B77476A1-76D2-4CD8-8D5C-E79F6798817A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B77476A1-76D2-4CD8-8D5C-E79F6798817A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71670D77-3582-4EB3-B8B8-9912DF29F8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71670D77-3582-4EB3-B8B8-9912DF29F8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71670D77-3582-4EB3-B8B8-9912DF29F8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71670D77-3582-4EB3-B8B8-9912DF29F8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
