@@ -3,10 +3,12 @@
 This Repository contains esoteric archive/compression formats.
 
 ## HashZip
+### Compression Ratio
 HashZip boasts an incredible infinite compression ratio - all inputs are compressed to only 64 bytes!
-
-Performance: Compression performance is very fast. Decompression may take a while for inputs larger than a few bytes, so make sure you have an inheritance plan to keep the process running to completion. 
-Data Integrity: The SHA-512 and length of the decompressed data will always match the SHA-512 and length of the original data.
+### Performance 
+Compression performance is very fast. Decompression may take a while for inputs larger than a few bytes, so make sure you have an inheritance plan to keep the process running to completion. 
+### Data Integrity
+The SHA-512 and length of the decompressed data will always match the SHA-512 and length of the original data.
 
 ### Compression
 A hash is taken of the content to be compressed.
