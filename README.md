@@ -59,9 +59,12 @@ public static byte[]? Decompress(byte[] digest, int fileLength)
 ```
 
 ## HashZip2
-Compression Ratio: The maximum archive size is bounded by the number of unique byte values in the original content.
-Performance: Compression performance is fast. Decompression is much faster than HashZip2.
-Data Integrity: The SHA-512 and count of occurences of bytes of the decompressed data will always match the SHA-512 and count of occurences of bytes of the original data.
+### Compression Ratio
+The archive size is determined by the number of unique byte values in the original content. You can achieve smaller compressed files by using fewer unique bytes.
+### Performance
+Compression performance is fast. Decompression is much faster than HashZip, but you'll still want to make sure your UPS is working.
+### Data Integrity
+The SHA-512 and count of occurences of bytes of the decompressed data will always match the SHA-512 and count of occurences of bytes of the original data.
 
 ### Compression
 A hash is taken of the content to be compressed and the number of occurences of each byte is counted.
